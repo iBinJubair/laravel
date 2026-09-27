@@ -282,7 +282,7 @@ RUN set -eux \
 ENV SHELL=/bin/bash
 ENV TERM=xterm-256color
 WORKDIR /var/www/
-#USER www-data
+# USER www-data
 
 VOLUME ["/var/www"]
 EXPOSE 443 80
