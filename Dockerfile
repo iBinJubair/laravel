@@ -278,11 +278,14 @@ RUN set -eux \
 		echo 'alias fgrep="fgrep --color=auto"'; \
 		echo 'alias egrep="egrep --color=auto"'; \
 	}  >> /var/www/.bashrc \
-	&& chown -R www-data:www-data /var/www
+	&& chown -R www-data:www-data /var/www \
+	# force interactive bash sessions to drop to www-data instantly
+	&& echo "su -s /bin/bash www-data" >> /root/.bashrc
+
 ENV SHELL=/bin/bash
 ENV TERM=xterm-256color
 WORKDIR /var/www/
-# USER www-data
+#USER www-data
 
 VOLUME ["/var/www"]
 EXPOSE 443 80
