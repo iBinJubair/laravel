@@ -1,4 +1,4 @@
-FROM php:8.4-apache-bookworm
+FROM php:8.4.27RC1-apache-bookworm
 SHELL ["/bin/bash", "-c"]
 
 
