@@ -140,6 +140,7 @@ RUN set -eux; \
         echo 'upload_max_filesize=256M'; \
         echo 'post_max_size=256M'; \
         echo 'expose_php=Off'; \
+		echo 'session.upload_progress.enabled=0' ;\
     } > /usr/local/etc/php/conf.d/php-recommended.ini; \
     \
     { \
